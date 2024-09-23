@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('tokens', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->integer('amount');
             $table->timestamps();
         });
     }
