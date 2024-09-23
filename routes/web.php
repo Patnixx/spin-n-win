@@ -14,9 +14,10 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
-});
+})->name('welcome');
+
 
 Route::get('/', [AuthController::class, 'loginIndex']);
 Route::get('/login', [AuthController::class, 'loginIndex'])->name('login');

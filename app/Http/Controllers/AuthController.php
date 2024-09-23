@@ -28,7 +28,8 @@ class AuthController extends Controller
             /*if (Auth::user()->role == 'Admin') {
                 return redirect()->intended('admin')->withSuccess('Signed in');
             }*/ //NOTE - Admin panel
-            return redirect()->intended('welcome')->withSuccess('Signed in');
+            $credentials = $request->only('username', 'password');
+            return view('welcome', compact('credentials'));
         }
         $validator['emailPassword'] = 'Email is missing';
         $validator['password'] = 'Password is missing';
