@@ -29,7 +29,7 @@ class AuthController extends Controller
                 return redirect()->intended('admin')->withSuccess('Signed in');
             }*/ //NOTE - Admin panel
             $credentials = $request->only('username', 'password');
-            return view('welcome', compact('credentials'));
+            return redirect('home')->withSuccess('Signed in');
         }
         $validator['emailPassword'] = 'Email is missing';
         $validator['password'] = 'Password is missing';
@@ -75,6 +75,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('welcome');
+        return redirect('home');
     }
 }
