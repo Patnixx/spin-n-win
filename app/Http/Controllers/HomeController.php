@@ -11,7 +11,7 @@ class HomeController extends Controller
 
     public function homeIndex(){
         if(Auth::check()){
-            $credentials = Auth::user()->username;
+            $credentials = Auth::user();
             return view('welcome', compact('credentials'));
         }
         return view('welcome');

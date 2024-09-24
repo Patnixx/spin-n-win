@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'homeIndex']);
+Route::get('/{username}/profile', [UserController::class, 'profile'])->name('profile');
 Route::get('/home', [HomeController::class, 'homeIndex'])->name('home');
 Route::get('/login', [AuthController::class, 'loginIndex'])->name('login');
 Route::post('/custom-login', [AuthController::class, 'loginAuth'])->name('custom.login');
