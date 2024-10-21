@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://i.ibb.co/H4G12p9/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.login .login-container {
+  background-color: #172235;
+  width: 40rem;
+  height: 35rem;
+  padding: 3rem;
+  border-radius: 2rem;
+  margin: 1rem;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+.login .login-container .login-title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: default;
+}
+.login .login-container .input-placeholder {
+  width: 20rem;
+  height: 3rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: #1c2941;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.login .login-container .input-placeholder:hover {
+  background-color: #2b3f64;
+}
+.login .login-container .input-placeholder::-moz-placeholder {
+  color: #ffffff;
+}
+.login .login-container .input-placeholder::placeholder {
+  color: #ffffff;
+}
+.login .login-container .login-btn {
+  width: 20rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  outline: none;
+  background-color: #e2a300;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.login .login-container .login-btn:hover {
+  background-color: #b58200;
+}
+.login .login-container .sub-btns {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+.login .login-container .sub-btns .sub-btn {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.login .login-container .sub-btns .sub-btn:hover {
+  color: #aaaaaa;
+}
+
+.register {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://i.ibb.co/H4G12p9/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.register .register-container {
+  background-color: #172235;
+  width: 40rem;
+  height: 52rem;
+  padding: 3rem;
+  border-radius: 2rem;
+  margin: 1rem;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+.register .register-container .register-title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: default;
+}
+.register .register-container .input-placeholder {
+  width: 20rem;
+  height: 3rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: #1c2941;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.register .register-container .input-placeholder:hover {
+  background-color: #2b3f64;
+}
+.register .register-container .input-placeholder::-moz-placeholder {
+  color: #ffffff;
+}
+.register .register-container .input-placeholder::placeholder {
+  color: #ffffff;
+}
+.register .register-container .register-btn {
+  width: 20rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  outline: none;
+  background-color: #e2a300;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.register .register-container .register-btn:hover {
+  background-color: #b58200;
+}
+.register .register-container .sub-btns {
+  display: flex;
+  margin: 1rem 0;
+}
+.register .register-container .sub-btns .sub-btn {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.register .register-container .sub-btns .sub-btn:hover {
+  color: #aaaaaa;
+}/*# sourceMappingURL=app.css.map */
