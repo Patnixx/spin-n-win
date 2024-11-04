@@ -18,6 +18,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [HomeController::class, 'homeIndex']);
 Route::get('/{username}/profile', [UserController::class, 'profile'])->name('profile');
+Route::get('/{username}/profile-update', [UserController::class, 'updateProfile'])->name('profile-update');
 Route::get('/home', [HomeController::class, 'homeIndex'])->name('home');
 Route::get('/login', [AuthController::class, 'loginIndex'])->name('login');
 Route::post('/custom-login', [AuthController::class, 'loginAuth'])->name('custom.login');
