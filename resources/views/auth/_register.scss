@@ -4,27 +4,44 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("https://i.ibb.co/H4G12p9/background.png");
+    background-image: url("../../background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    .register-container{
+
+    .register-container {
         background-color: #172235;
         width: 40rem;
-        height: 52rem;
+        min-height: 52rem;
         padding: 3rem;
         border-radius: 2rem;
         margin: 1rem;
         display: grid;
         justify-content: center;
         text-align: center;
-        .register-title{
+
+        .register-title {
             color: #fff;
             font-size: 3rem;
             font-weight: bold;
             cursor: default;
         }
-        .input-placeholder{
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .text-danger {
+            color: #ff0000;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: default;
+        }
+
+        .input-placeholder {
             width: 20rem;
             height: 3rem;
             margin: 1rem 0;
@@ -36,14 +53,17 @@
             color: white;
             font-weight: bold;
             transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: #2b3f64;
+            }
+
+            &::placeholder {
+                color: #ffffff;
+            }
         }
-        .input-placeholder:hover{
-            background-color: #2b3f64;
-        }
-        .input-placeholder::placeholder {
-            color: #ffffff;
-        }
-        .register-btn{
+
+        .register-btn {
             width: 20rem;
             margin: 1rem 0;
             padding: 0.5rem;
@@ -56,23 +76,27 @@
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: #b58200;
+            }
         }
-        .register-btn:hover{
-            background-color: #b58200;
-        }
-        .sub-btns{
+
+        .sub-btns {
             display: flex;
             margin: 1rem 0;
-            .sub-btn{
+
+            .sub-btn {
                 padding: 0.5rem;
                 font-size: 1rem;
                 color: white;
                 cursor: pointer;
                 font-weight: bold;
                 transition: all 0.3s ease-in-out;
-            }
-            .sub-btn:hover{
-                color: #aaaaaa;
+
+                &:hover {
+                    color: #aaaaaa;
+                }
             }
         }
     }
