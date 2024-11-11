@@ -8,8 +8,9 @@
       <!-- NOTE - Username -->
       <div class="input-container">
         <input class="input-placeholder" type="username" id="username" name="username" placeholder="Username" class="@error('username') is-invalid @enderror" value="{{@old('username')}}">
-        @if ($errors->has('password'))
-          <span class="text-danger" role="alert">{{$errors->first('password')}}</span>
+
+        @if ($errors->has('username'))
+          <span class="text-danger" role="alert">{{$errors->first('username')}}</span>
         @endif
       </div>
 
