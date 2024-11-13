@@ -1,39 +1,29 @@
-let coin = document.querySelector(".coin");
-let flipBtn = document.querySelector("#flip-button");
-let resetBtn = document.querySelector("#reset-button");
-
-let heads = 0;
-let tails = 0
-
-flipBtn.addEventListener("click", () => {
-    let i = Math.floor(Math.random() * 2);
-    coin.style.animation = "none";
-    if(i){
-        setTimeout(function(){
-            coin.style.animation = "spin-heads 3s forwards";
-        }, 100);
-        heads++;
-    }
-    else{
-        setTimeout(function(){
-            coin.style.animation = "spin-tails 3s forwards";
-        }, 100);
-        tails++;
-    }
-    setTimeout(updateStats, 3000);
-    disableButton();
+const coinIcon = document.getElementById('coin');
+const tossBtn = 
+    document.getElementById('toss-button');
+const result = 
+    document.querySelector('.result');
+coinIcon.insertAdjacentElement('afterend', result);
+tossBtn.addEventListener('click', () => {
+    tossBtn.disabled = true;
+    tossCoinFunction();
 });
-
-function disableButton(){
-    flipBtn.disabled = true;
-    setTimeout(function(){
-        flipBtn.disabled = false;
-    },3000);
+function tossCoinFunction() {
+    const randomVal = Math.random();
+    const faceCoin = randomVal < 0.5 ? 'Heads' : 'Tails';
+    const imageUrl = faceCoin === 'Heads' ?
+'https://media.geeksforgeeks.org/wp-content/uploads/20231016151817/heads.png' :
+'https://media.geeksforgeeks.org/wp-content/uploads/20231016151806/tails.png';
+        
+    coinIcon.classList.add('flip');
+    setTimeout(() => {
+        coinIcon.innerHTML = 
+            `<img src="${imageUrl}" alt="${faceCoin}">`;
+        coinIcon.classList.remove('flip');
+        setTimeout(() => {
+            result.textContent = `Result: ${faceCoin}`;
+            result.style.opacity = 1;
+            tossBtn.disabled = false;
+        }, 500);
+    }, 1000);
 }
-
-resetBtn.addEventListener("click",() => {
-    coin.style.animation = "none";
-    heads = 0;
-    tails = 0;
-    updateStats();
-});
