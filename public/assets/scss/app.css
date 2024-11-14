@@ -316,4 +316,9 @@ h2 {
   color: #333;
   font-size: 24px;
   margin: 10px 0;
+}
+
+.disabled {
+  background-color: black !important;
+  color: grey !important;
 }/*# sourceMappingURL=app.css.map */
