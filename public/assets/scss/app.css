@@ -195,6 +195,251 @@
   color: #aaaaaa;
 }
 
+.profile {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.profile .left {
+  background-color: #172235;
+  width: 500px;
+  height: 38rem;
+  border-radius: 20px 0 0 20px;
+  padding: 2rem;
+}
+.profile .right {
+  background-color: #172235;
+  width: 500px;
+  height: 38rem;
+  padding: 2rem;
+  border-radius: 0 20px 20px 0;
+}
+.profile .column {
+  padding-left: 5rem;
+}
+.profile .column .profile-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: default;
+  text-align: left;
+}
+.profile .column h2 {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: default;
+  text-align: left;
+}
+.profile .column .input-placeholder {
+  width: 20rem;
+  height: 2.5rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: #1c2941;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.profile .column .input-placeholder:hover {
+  background-color: #2b3f64;
+}
+.profile .column .input-placeholder::-moz-placeholder {
+  color: #ffffff;
+}
+.profile .column .input-placeholder::placeholder {
+  color: #ffffff;
+}
+.profile .column .register-btn {
+  width: 20rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  outline: none;
+  background-color: #e2a300;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.profile .column .register-btn:hover {
+  background-color: #b58200;
+}
+.profile .column .sub-btns {
+  display: flex;
+  margin: 1rem 0;
+}
+.profile .column .sub-btns .sub-btn {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+.profile .column .sub-btns .sub-btn:hover {
+  color: #aaaaaa;
+}
+
+.main_hp {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../../public/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+}
+.main_hp .sidebar {
+  background-color: #121A29;
+  min-height: 100vh;
+  width: 300px;
+}
+.main_hp .sidebar .banner {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_hp .sidebar .banner img {
+  height: 100%;
+  padding: 10px 20px 10px 10px;
+}
+.main_hp .sidebar .banner h1 {
+  color: white;
+}
+.main_hp .sidebar .menu ul {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.main_hp .sidebar .menu ul li {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.main_hp .sidebar .menu ul li a {
+  color: white;
+  text-decoration: none;
+  background-color: #1C2941;
+  font-size: 2rem;
+  text-align: center;
+  padding: 20px 0;
+  width: 80%;
+  border-radius: 0.7rem;
+  font-weight: bold;
+}
+.main_hp .slots {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.main_hp .slots nav {
+  width: 100%;
+  height: 100px;
+  background-color: #121A29;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+}
+.main_hp .slots nav .last-win {
+  color: white;
+  font-size: 0.5rem;
+  width: 180px;
+  height: 90%;
+  background-color: #E2A300;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+.main_hp .slots .slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: 0 auto;
+  max-height: 400px;
+  margin: 0 10% 0 10%;
+  margin-bottom: 50px;
+}
+.main_hp .slots .slideshow-container .prev, .main_hp .slots .slideshow-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 20px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.main_hp .slots .slideshow-container .prev {
+  background: linear-gradient(-47.223deg, #E2A300 0%, #7C5A00 100%);
+  left: -25px;
+}
+.main_hp .slots .slideshow-container .next {
+  right: -25px;
+  background: linear-gradient(-132.777deg, #E2A300 0%, #7C5A00 100%);
+}
+.main_hp .slots .slideshow-container .prev:hover, .main_hp .slots .slideshow-container .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.main_hp .slots .games {
+  width: 90%;
+  background-color: #172235;
+  margin: auto;
+  border-radius: 8px;
+}
+.main_hp .slots .games h1 {
+  color: white;
+  padding: 15px 0 0 15px;
+}
+.main_hp .slots .games h2 {
+  color: white;
+  padding: 5px 0 25px 15px;
+}
+.main_hp .slots .games .gamesky {
+  display: grid;
+  max-width: 90%;
+  margin: 0 auto;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  padding-bottom: 50px;
+}
+.main_hp .slots .games .gamesky .game {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next, .text {
+    font-size: 11px;
+  }
+}
 .cf-body {
   font-family: "Arial", sans-serif;
   background-image: url("../../background.png");
