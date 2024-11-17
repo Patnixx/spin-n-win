@@ -35,5 +35,6 @@ Route::get('/register', [AuthController::class, 'registerIndex'])->name('registe
 Route::post('/custom-registration', [AuthController::class, 'registerAuth'])->name('custom.register');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-/* SECTION - Games Routes */
 Route::get('/coinflip', [GameController::class, 'coinflip'])->name('coinflip');
+Route::post('/coinflip-toss', [GameController::class, 'cf_toss'])->name('coinflip.toss');
+/* SECTION - Games Routes */
