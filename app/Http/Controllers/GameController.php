@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,5 +53,18 @@ class GameController extends Controller
             'result' => $result,
             'new_balance' => $balance,
         ]);
+    }
+
+    public function slot(){
+        if(Auth::check())
+        {
+            $credentials = Auth::user();
+            //$slot = Game::where('id', $id)->first();
+            return view('games.slots.index', compact('credentials'));
+        }
+        else
+        {
+            return redirect()->route('login');
+    }
     }
 }

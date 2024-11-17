@@ -69,38 +69,7 @@
                     </div>
                 </div>      
             </nav>
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                  <img src="{{asset('assets/slides/first.png')}}" style="width:100%">
-                </div> 
-                <div class="mySlides fade">
-                  <img src="{{asset('assets/slides/second.jpg')}}" style="width:100%">
-                </div>               
-                <div class="mySlides fade">
-                  <img src="{{asset('assets/slides/third.jpg')}}" style="width:100%">
-                </div>
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a> 
-                </div>
-              <div class="games">
-                <h1>SLOTS</h1>
-                <h2>Most Popular</h2>
-                  <div class="gamesky">
-                    @foreach ($slots as $slot)
-                    <form action="{{route('slot', $slot->id)}}" method="get"></form>
-                    @csrf
-                      <a class="visibility" href="{{route('slot')}}">
-                      <div class="game" style="background-image: url('{{ asset("assets/slots/" . $slot->name . ".png") }}');">
-                      <button type="submit" class="play-btn"></button>
-                        </div>
-                      </a> 
-                    {{--<div class="game"><img src="{{$slot->picture_path}}" alt="{{$slot->name}}"></div>--}}
-                    @endforeach
-                    {{--@for($i = 0; $i <10; $i++)
-                        <div class="game"></div>
-                    @endfor--}}
-                  </div>
-              </div>
+            <iframe src="https://demogamesfree.pragmaticplay.net/gs2c/openGame.do?gameSymbol=vswaysmfreya&websiteUrl=https%3A%2F%2Fdemogamesfree.pragmaticplay.net&jurisdiction=99&lobby_url=https%3A%2F%2Fwww.pragmaticplay.com%2Fen%2F&lang=SK&cur=EUR.">
             </div>
         </div>
     </main>

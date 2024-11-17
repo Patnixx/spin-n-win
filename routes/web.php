@@ -37,4 +37,6 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/coinflip', [GameController::class, 'coinflip'])->name('coinflip');
 Route::post('/coinflip-toss', [GameController::class, 'cf_toss'])->name('coinflip.toss');
+
+Route::get('/slot', [GameController::class, 'slot'])->name('slot');
 /* SECTION - Games Routes */
