@@ -23,7 +23,10 @@ Route::get('/home', [HomeController::class, 'homeIndex'])->name('home');
 
 /* SECTION - Profile Routes*/
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
-Route::post('/profile-update', [UserController::class, 'updateProfile'])->name('profile-update');
+Route::post('/profile-update-pass', [UserController::class, 'updateProfile'])->name('profile.updatepass');
+Route::post('/profile-get-tkn', [UserController::class, 'addBalance'])->name('profile.get.tkn');
+Route::post('/profile-lost-tkn', [UserController::class, 'withdrawBalance'])->name('profile.lost.tkn');
+
 
 /* SECTION - Auth Routes */
 Route::get('/login', [AuthController::class, 'loginIndex'])->name('login');

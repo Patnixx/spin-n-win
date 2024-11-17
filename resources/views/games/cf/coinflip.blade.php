@@ -32,7 +32,7 @@
          const randomVal = Math.random();
          const faceCoin = randomVal < 0.5 ? 'Heads' : 'Tails';
          const imageUrl = faceCoin === 'Heads' ?
-      'https://media.geeksforgeeks.org/wp-content/uploads/20231016151817/heads.png' :
+      '../../../../public/assets/img/heads.png' :
       'https://media.geeksforgeeks.org/wp-content/uploads/20231016151806/tails.png';
             
          coinIcon.classList.add('flip');

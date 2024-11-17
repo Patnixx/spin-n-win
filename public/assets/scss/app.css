@@ -230,6 +230,9 @@
   cursor: default;
   text-align: left;
 }
+.profile .column .profile-title span {
+  color: #e2a300;
+}
 .profile .column h2 {
   color: #fff;
   font-size: 1.4rem;
@@ -295,7 +298,7 @@
 .main_hp {
   width: 100%;
   min-height: 100vh;
-  background-image: url("../../public/background.png");
+  background-image: url("../../background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

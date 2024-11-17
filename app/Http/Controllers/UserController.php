@@ -17,35 +17,41 @@ class UserController extends Controller
 
     public function updateProfile(Request $request){
         $id = Auth::id();
-    
-        // Validate input, ensuring password is optional
         $request->validate([
-            'f_name' => 'nullable|string',
-            'l_name' => 'nullable|string',
-            'email' => 'nullable|email|unique:users,email,' . $id,
-            'username' => 'nullable|string',
-            'password' => 'nullable|string|min:6|confirmed',
+            'n_pass' => 'nullable|string|min:6',
+            'nc_pass' => 'nullable|same:n_pass',
         ]);
-    
-        // Prepare the data for update, hashing password only if provided
-        $data = [
+        User::where('id', $id)->update([
+            'password' => Hash::make($request->nc_pass)
+        ]);
+        
+        /*$data = [
             'f_name' => $request->f_name,
             'l_name' => $request->l_name,
             'email' => $request->email,
             'username' => $request->username,
-        ];
-    
-        if ($request->filled('password')) {
-            $data['password'] = Hash::make($request->password);
-        }
-    
-        // Update the user's information in the database
-        DB::table('users')->where('id', $id)->update($data);
-    
-        session()->flash('success', 'Profile updated successfully!');
+        ];*/
 
-        // Redirect back to the profile page
+            session()->flash('success', 'Password updated successfully!');
+
+            return redirect()->route('profile');
+    }
+
+    public function addBalance(Request $request){
+        $id = Auth::id();
+        $request->validate([
+            'amount' => 'nullable|integer',
+        ]);
+
+        $tkn = Auth::user()->token_amount;
+        $tkn += $request->amount;
+
+        User::where('id', $id)->update([
+            'token_amount' => $tkn
+        ]);
+
+        session()->flash('success', 'Tokens bought successfully!');
+
         return redirect()->route('profile');
     }
-    
 }

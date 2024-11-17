@@ -24,7 +24,7 @@
         <button class="login-btn" type="submit">Log In</button>
         <div class="sub-btns" >
          <a class="sub-btn" href="{{route('register')}}">Register</a>
-         <a class="sub-btn" href="#">Forgot your password?</a>
+         <a class="sub-btn" href="{{route('home')}}">Back to homepage</a>
         </div>
     </form>
   </div>

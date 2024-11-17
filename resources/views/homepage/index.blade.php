@@ -80,9 +80,12 @@
                 <h1>SLOTS</h1>
                 <h2>Most Popular</h2>
                   <div class="gamesky">
-                    @for($i = 0; $i <10; $i++)
+                    @foreach ($slots as $slot)
+                      <div class="game""><img src="{{$slot->picture_path}}" alt="{{$slot->name}}"></div>
+                    @endforeach
+                    {{--@for($i = 0; $i <10; $i++)
                         <div class="game"></div>
-                    @endfor
+                    @endfor--}}
                   </div>
               </div>
             </div>
