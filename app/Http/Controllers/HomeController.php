@@ -17,7 +17,7 @@ class HomeController extends Controller
             $slots = Game::inRandomOrder()->take(10)->get();
             return view('homepage.index', compact('credentials', 'slots'));
         }
-        return view('homepage.index');
+        return view('auth.login');
     }
     
 }

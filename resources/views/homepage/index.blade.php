@@ -81,7 +81,12 @@
                 <h2>Most Popular</h2>
                   <div class="gamesky">
                     @foreach ($slots as $slot)
-                      <div class="game""><img src="{{$slot->picture_path}}" alt="{{$slot->name}}"></div>
+                    <a class="visibility" href="">
+                    <div class="game" style="background-image: url('{{ asset("assets/slots/" . $slot->name . ".png") }}');">
+                    <button class="play-btn">Play</button>
+                      </div>
+                    </a>  
+                    {{--<div class="game"><img src="{{$slot->picture_path}}" alt="{{$slot->name}}"></div>--}}
                     @endforeach
                     {{--@for($i = 0; $i <10; $i++)
                         <div class="game"></div>
@@ -113,6 +118,19 @@
           }
           slides[slideIndex-1].style.display = "block";  
         }
+
+        const links = document.querySelectorAll('.visibility');
+        const buttons = document.querySelectorAll('.play-btn');
+
+        links.forEach((link, index) => {
+          link.addEventListener('mouseenter', () => {
+            buttons[index].style.display = 'inline-block';
+          });
+          link.addEventListener('mouseleave', () => {
+            buttons[index].style.display = 'none';
+          });
+        });
+
         </script>
     </body>
 @endsection

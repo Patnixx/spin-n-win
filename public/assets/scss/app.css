@@ -356,15 +356,36 @@
   margin-bottom: 50px;
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 .main_hp .slots nav .last-win {
   color: white;
   font-size: 0.5rem;
-  width: 180px;
-  height: 90%;
-  background-color: #E2A300;
-  border-radius: 3px;
-  margin-right: 5px;
+  height: 90px;
+  background-image: url("../../slots/Release the Kraken Megaway.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  background-position: 20px;
+  width: 150px;
+  margin: auto 0;
+}
+.main_hp .slots nav .last-win .gradient {
+  background: rgb(226, 163, 0);
+  background: linear-gradient(90deg, rgb(226, 163, 0) 0%, rgb(226, 163, 0) 29%, rgba(226, 163, 0, 0.5480567227) 77%, rgba(226, 163, 0, 0) 100%);
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.main_hp .slots nav .last-win .gradient h1 {
+  padding: 15px 0 0 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.main_hp .slots nav .last-win .gradient h2 {
+  padding: 20px 0 0 10px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 .main_hp .slots .slideshow-container {
   max-width: 1000px;
@@ -420,14 +441,38 @@
   max-width: 90%;
   margin: 0 auto;
   gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(339px, 1fr));
   padding-bottom: 50px;
 }
-.main_hp .slots .games .gamesky .game {
-  background-color: red;
-  width: 200px;
-  height: 200px;
+.main_hp .slots .games .gamesky a {
+  text-decoration: none;
+}
+.main_hp .slots .games .gamesky a:hover {
+  filter: brightness(50%);
+}
+.main_hp .slots .games .gamesky a .game {
+  width: 339px;
+  height: 180px;
   margin: auto;
+  background-image: url("7 Clovers of Fortune.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_hp .slots .games .gamesky a .game button {
+  background-color: white;
+  color: #172235;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  filter: none !important;
+}
+.main_hp .slots .games .gamesky a .game button:hover {
+  background-color: #E2A300;
 }
 
 .mySlides {
