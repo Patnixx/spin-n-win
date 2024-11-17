@@ -33,35 +33,41 @@
         <div class="slots">
             <nav>
                 <div class="last-win">
-                    <h1>Automat tu bude napisany</h1>
-                    <h2>Hrac: Cukrovkar</h2>
-                    <h3>Vyhra: holy trt</h3>
-                </div>
+                    <div class="gradient">
+                      <h1>3.40€</h1>
+                      <h2>Cukrovkar</h2>
+                    </div>
+                </div>  
                 <div class="last-win">
-                  <h1>Automat tu bude napisany</h1>
-                  <h2>Hrac: Cukrovkar</h2>
-                  <h3>Vyhra: holy trt</h3>
-              </div>
-              <div class="last-win">
-                <h1>Automat tu bude napisany</h1>
-                <h2>Hrac: Cukrovkar</h2>
-                <h3>Vyhra: holy trt</h3>
-            </div>
-            <div class="last-win">
-              <h1>Automat tu bude napisany</h1>
-              <h2>Hrac: Cukrovkar</h2>
-              <h3>Vyhra: holy trt</h3>
-          </div>
-          <div class="last-win">
-            <h1>Automat tu bude napisany</h1>
-            <h2>Hrac: Cukrovkar</h2>
-            <h3>Vyhra: holy trt</h3>
-        </div>
-        <div class="last-win">
-          <h1>Automat tu bude napisany</h1>
-          <h2>Hrac: Cukrovkar</h2>
-          <h3>Vyhra: holy trt</h3>
-      </div>                
+                    <div class="gradient">
+                      <h1>3.40€</h1>
+                      <h2>Cukrovkar</h2>
+                    </div>
+                </div>    
+                <div class="last-win">
+                    <div class="gradient">
+                      <h1>3.40€</h1>
+                      <h2>Cukrovkar</h2>
+                    </div>
+                </div>    
+                <div class="last-win">
+                    <div class="gradient">
+                      <h1>3.40€</h1>
+                      <h2>Cukrovkar</h2>
+                    </div>
+                </div>    
+                <div class="last-win">
+                    <div class="gradient">
+                      <h1>3.40€</h1>
+                      <h2>Cukrovkar</h2>
+                    </div>
+                </div>    
+                <div class="last-win">
+                    <div class="gradient">
+                      <h1>3.40€</h1>
+                      <h2>Cukrovkar</h2>
+                    </div>
+                </div>      
             </nav>
             <div class="slideshow-container">
                 <div class="mySlides fade">

@@ -342,6 +342,11 @@
   width: 80%;
   border-radius: 0.7rem;
   font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+.main_hp .sidebar .menu ul li a:hover {
+  background-color: #E2A300;
+  color: #172235;
 }
 .main_hp .slots {
   display: flex;
@@ -378,14 +383,16 @@
   border-radius: 5px;
 }
 .main_hp .slots nav .last-win .gradient h1 {
-  padding: 15px 0 0 10px;
+  padding: 10px 0 0 10px;
   font-size: 1.5rem;
   font-weight: bold;
+  color: white;
 }
 .main_hp .slots nav .last-win .gradient h2 {
   padding: 20px 0 0 10px;
   font-size: 1rem;
   font-weight: bold;
+  color: white;
 }
 .main_hp .slots .slideshow-container {
   max-width: 1000px;
@@ -410,6 +417,9 @@
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+.main_hp .slots .slideshow-container .prev:hover, .main_hp .slots .slideshow-container .next:hover {
+  filter: brightness(60%);
 }
 .main_hp .slots .slideshow-container .prev {
   background: linear-gradient(-47.223deg, #E2A300 0%, #7C5A00 100%);
@@ -446,6 +456,7 @@
 }
 .main_hp .slots .games .gamesky a {
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
 }
 .main_hp .slots .games .gamesky a:hover {
   filter: brightness(50%);
@@ -470,9 +481,11 @@
   cursor: pointer;
   display: none;
   filter: none !important;
+  transition: all 0.3s ease-in-out;
 }
 .main_hp .slots .games .gamesky a .game button:hover {
   background-color: #E2A300;
+  color: white;
 }
 
 .mySlides {
