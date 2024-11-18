@@ -16,55 +16,15 @@
             </div> 
         </div>
         <div class="slots">
-            <nav>
-                <div class="last-win">
+            <nav> 
+                @foreach ($slotss as $index => $slot)
+                  <div class="last-win" style="background-image: url('{{ asset("assets/slots/" . $slot->name . ".png") }}');">
                     <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
+                      <h1>{{$slot->name}}</h1>
+                      <h2>{{$users[$index]->username}}</h2>
                     </div>
-                </div>  
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>    
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>    
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>    
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div> 
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div> 
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div> 
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div> 
+                  </div>
+                @endforeach
                 <div class="btns">
                  @if (Route::has('login'))
                         <div>

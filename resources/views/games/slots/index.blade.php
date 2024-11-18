@@ -17,66 +17,14 @@
         </div>
         <div class="slots">
             <nav>
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>  
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>    
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>    
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>    
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>    
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>      
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>   
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>   
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
-                </div>   
-                <div class="last-win">
-                    <div class="gradient">
-                      <h1>3.40€</h1>
-                      <h2>Cukrovkar</h2>
-                    </div>
+              @foreach ($slots as $index => $slot)
+              <div class="last-win" style="background-image: url('{{ asset("assets/slots/" . $slot->name . ".png") }}');">
+                <div class="gradient">
+                  <h1>{{$slot->name}}</h1>
+                  <h2>{{$users[$index]->username}}</h2>
                 </div>
+              </div>
+            @endforeach
                 <div class="btns">
                  @if (Route::has('login'))
                         <div>
@@ -100,41 +48,5 @@
             </div>
         </div>
     </main>
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-        
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-        
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-        
-        function showSlides(n) {
-          let i;
-          let slides = document.getElementsByClassName("mySlides");
-          if (n > slides.length) {slideIndex = 1}    
-          if (n < 1) {slideIndex = slides.length}
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-          }
-          slides[slideIndex-1].style.display = "block";  
-        }
-
-        const links = document.querySelectorAll('.visibility');
-        const buttons = document.querySelectorAll('.play-btn');
-
-        links.forEach((link, index) => {
-          link.addEventListener('mouseenter', () => {
-            buttons[index].style.display = 'inline-block';
-          });
-          link.addEventListener('mouseleave', () => {
-            buttons[index].style.display = 'none';
-          });
-        });
-
-        </script>
     </body>
 @endsection

@@ -60,7 +60,9 @@ class GameController extends Controller
         {
             $credentials = Auth::user();
             $slot = Game::where('id', $id)->first();
-            return view('games.slots.index', compact('credentials', 'slot'));
+            $slots = Game::inRandomOrder()->take(7)->get();
+            $users = User::inRandomOrder()->take(7)->get();
+            return view('games.slots.index', compact('credentials', 'slot', 'slots', 'users'));
         }
         else
         {
