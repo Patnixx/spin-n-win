@@ -312,15 +312,19 @@
 .main_hp .sidebar .banner {
   height: 100px;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 .main_hp .sidebar .banner img {
   height: 100%;
-  padding: 10px 20px 10px 10px;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
 }
 .main_hp .sidebar .banner h1 {
+  padding-top: 10px;
   color: white;
+  font-weight: bold;
+  font-size: 2.4rem;
 }
 .main_hp .sidebar .menu ul {
   display: flex;
@@ -352,16 +356,17 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  align-items: center;
 }
 .main_hp .slots nav {
-  width: 100%;
+  width: calc(100% - 200px);
   height: 100px;
   background-color: #121A29;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 5px;
+  overflow: hidden;
 }
 .main_hp .slots nav .last-win {
   color: white;
@@ -373,7 +378,7 @@
   border-radius: 5px;
   background-position: 20px;
   width: 150px;
-  margin: auto 0;
+  margin: 5px 0;
 }
 .main_hp .slots nav .last-win .gradient {
   background: rgb(226, 163, 0);
@@ -394,7 +399,31 @@
   font-weight: bold;
   color: white;
 }
+.main_hp .slots nav .btns {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 100px;
+  background-color: #121A29;
+}
+.main_hp .slots nav .btns div {
+  background-color: #E2A300;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+}
+.main_hp .slots nav .btns div a {
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.main_hp .slots nav .btns div a:hover {
+  color: #172235;
+}
 .main_hp .slots .slideshow-container {
+  align-self: center;
   max-width: 1000px;
   position: relative;
   margin: 0 auto;
@@ -440,11 +469,14 @@
 }
 .main_hp .slots .games h1 {
   color: white;
-  padding: 15px 0 0 15px;
+  padding: 35px 0 0 35px;
+  font-size: 2rem;
+  font-weight: bold;
 }
 .main_hp .slots .games h2 {
   color: white;
-  padding: 5px 0 25px 15px;
+  padding: 5px 0 25px 35px;
+  font-weight: bold;
 }
 .main_hp .slots .games .gamesky {
   display: grid;
@@ -627,4 +659,146 @@ h2 {
 .disabled {
   background-color: black !important;
   color: grey !important;
+}
+
+.main_sp {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../../background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+}
+.main_sp .sidebar {
+  background-color: #121A29;
+  min-height: 100vh;
+  width: 300px;
+}
+.main_sp .sidebar .banner {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.main_sp .sidebar .banner img {
+  height: 100%;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 10px;
+}
+.main_sp .sidebar .banner h1 {
+  padding-top: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+.main_sp .sidebar .menu ul {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.main_sp .sidebar .menu ul li {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.main_sp .sidebar .menu ul li a {
+  color: white;
+  text-decoration: none;
+  background-color: #1C2941;
+  font-size: 2rem;
+  text-align: center;
+  padding: 20px 0;
+  width: 80%;
+  border-radius: 0.7rem;
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+.main_sp .sidebar .menu ul li a:hover {
+  background-color: #E2A300;
+  color: #172235;
+}
+.main_sp .slots {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.main_sp .slots nav {
+  width: calc(100% - 200px);
+  height: 100px;
+  background-color: #121A29;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  overflow: hidden;
+}
+.main_sp .slots nav .last-win {
+  color: white;
+  font-size: 0.5rem;
+  height: 90px;
+  background-image: url("../../slots/Release the Kraken Megaway.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  background-position: 20px;
+  width: 150px;
+  margin: 5px 0;
+}
+.main_sp .slots nav .last-win .gradient {
+  background: rgb(226, 163, 0);
+  background: linear-gradient(90deg, rgb(226, 163, 0) 0%, rgb(226, 163, 0) 29%, rgba(226, 163, 0, 0.5480567227) 77%, rgba(226, 163, 0, 0) 100%);
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.main_sp .slots nav .last-win .gradient h1 {
+  padding: 10px 0 0 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+.main_sp .slots nav .last-win .gradient h2 {
+  padding: 20px 0 0 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+}
+.main_sp .slots nav .btns {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 100px;
+  background-color: #121A29;
+}
+.main_sp .slots nav .btns div {
+  background-color: #E2A300;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+}
+.main_sp .slots nav .btns div a {
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.main_sp .slots nav .btns div a:hover {
+  color: #172235;
+}
+.main_sp .slots .iframe-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  margin: auto;
+}
+.main_sp .slots .iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }/*# sourceMappingURL=app.css.map */

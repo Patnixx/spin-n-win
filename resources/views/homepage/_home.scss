@@ -12,19 +12,23 @@
         min-height: 100vh;
         width: 300px;
         
-        .banner{
+        .banner{	
             height: 100px;
             display: flex;
-            justify-content: center;
             align-items: center;
 
             img{
                 height: 100%;
-                padding: 10px 20px 10px 10px;
+                padding-top: 10px;
+                padding-left: 30px;
+                padding-right: 10px;
             }
 
             h1{
+                padding-top: 10px;
                 color: white;
+                font-weight: bold;
+                font-size: 2.4rem;
             }
         }
 
@@ -66,16 +70,17 @@
         display: flex;
         width: 100%;
         flex-direction: column;
-        align-items: center;
 
         nav{
-            width: 100%;
+            width: calc(100% - 200px);
             height: 100px;
             background-color: #121A29;
             margin-bottom: 50px;
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 5px;
+            overflow: hidden;
 
             .last-win{
                 color: white;
@@ -87,7 +92,7 @@
                 border-radius: 5px;
                 background-position: 20px;
                 width: 150px;
-                margin: auto 0;
+                margin: 5px 0;
 
                 .gradient{
                     background: rgb(226,163,0);
@@ -111,9 +116,37 @@
                     }
                 }
             }
+
+            .btns{
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 200px;
+                height: 100px;
+                background-color: #121A29;
+
+                div{
+                    background-color: #E2A300;
+                    padding: 0.6rem 1rem;
+                    border-radius: 5px;
+
+                    a{
+                        color: white;
+                        transition: all 0.3s ease-in-out;
+
+                        &:hover{
+                            color: #172235;
+                        }
+                    }
+                }
+            }
         }
 
         .slideshow-container {
+            align-self: center;
             max-width: 1000px;
             position: relative;
             margin: 0 auto;
@@ -164,12 +197,15 @@
 
             h1{
                 color: white;
-                padding: 15px 0 0 15px;
+                padding: 35px 0 0 35px;
+                font-size: 2rem;
+                font-weight: bold;
             }
             
             h2{
                 color: white;
-                padding: 5px 0 25px 15px;
+                padding: 5px 0 25px 35px;
+                font-weight: bold;
             }
 
             .gamesky{

@@ -12,21 +12,6 @@
                 <ul>
                     <li><a href="">SLOTS</a></li>
                     <li><a href="{{route('coinflip')}}">COINFLIP</a></li>
-                    <li><a href="">MINES</a></li>
-                    @if (Route::has('login'))
-                        <div>
-                            @auth
-                                <a href="{{ route('logout') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Logout</a>
-                                <a href="{{ route('profile') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:&outline-2 focus:rounded-sm focus:outline-red-500">{{$credentials->username}}</a>
-                            @else
-                                <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
-
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                                @endif
-                            @endauth
-                        </div>
-                    @endif
                 </ul>
             </div> 
         </div>
@@ -61,13 +46,41 @@
                       <h1>3.40€</h1>
                       <h2>Cukrovkar</h2>
                     </div>
-                </div>    
+                </div> 
                 <div class="last-win">
                     <div class="gradient">
                       <h1>3.40€</h1>
                       <h2>Cukrovkar</h2>
                     </div>
-                </div>      
+                </div> 
+                <div class="last-win">
+                    <div class="gradient">
+                      <h1>3.40€</h1>
+                      <h2>Cukrovkar</h2>
+                    </div>
+                </div> 
+                <div class="last-win">
+                    <div class="gradient">
+                      <h1>3.40€</h1>
+                      <h2>Cukrovkar</h2>
+                    </div>
+                </div> 
+                <div class="btns">
+                 @if (Route::has('login'))
+                        <div>
+                            @auth
+                                <a href="{{ route('logout') }}" class="font-semibold text-white-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Logout</a>
+                                <a href="{{ route('profile') }}" class="font-semibold text-white-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:&outline-2 focus:rounded-sm focus:outline-red-500">{{$credentials->username}}</a>
+                            @else
+                                <a href="{{ route('login') }}" class="font-semibold text-white-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="ml-4 font-semibold text-white-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                @endif
+                            @endauth
+                        </div>
+                    @endif
+                </div>       
             </nav>
             <div class="slideshow-container">
                 <div class="mySlides fade">
@@ -87,13 +100,14 @@
                 <h2>Most Popular</h2>
                   <div class="gamesky">
                     @foreach ($slots as $slot)
-                    <form action="{{route('slot', $slot->id)}}" method="get"></form>
+                    <form action="{{route('slot', $slot->id)}}" method="get">
                     @csrf
                       <a class="visibility" href="{{route('slot')}}">
                       <div class="game" style="background-image: url('{{ asset("assets/slots/" . $slot->name . ".png") }}');">
-                      <button type="submit" class="play-btn"></button>
+                      <button type="submit" class="play-btn">Play</button>
                         </div>
                       </a> 
+                      </form>
                     {{--<div class="game"><img src="{{$slot->picture_path}}" alt="{{$slot->name}}"></div>--}}
                     @endforeach
                     {{--@for($i = 0; $i <10; $i++)
