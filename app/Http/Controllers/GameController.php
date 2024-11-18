@@ -55,16 +55,16 @@ class GameController extends Controller
         ]);
     }
 
-    public function slot(){
+    public function slot($id){
         if(Auth::check())
         {
             $credentials = Auth::user();
-            //$slot = Game::where('id', $id)->first();
-            return view('games.slots.index', compact('credentials'));
+            $slot = Game::where('id', $id)->first();
+            return view('games.slots.index', compact('credentials', 'slot'));
         }
         else
         {
             return redirect()->route('login');
-    }
+        }
     }
 }

@@ -95,7 +95,7 @@
                 </div>        
             </nav>
             <div class="iframe-container">
-              <iframe src="https://demogamesfree.pragmaticplay.net/gs2c/openGame.do?gameSymbol=vswaysmfreya&websiteUrl=https%3A%2F%2Fdemogamesfree.pragmaticplay.net&jurisdiction=99&lobby_url=https%3A%2F%2Fwww.pragmaticplay.com%2Fen%2F&lang=SK&cur=EUR.">
+              <iframe src="{{$slot->game_path}}">
               </div>
             </div>
         </div>

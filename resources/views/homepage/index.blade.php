@@ -102,7 +102,7 @@
                     @foreach ($slots as $slot)
                     <form action="{{route('slot', $slot->id)}}" method="get">
                     @csrf
-                      <a class="visibility" href="{{route('slot')}}">
+                      <a class="visibility" href="{{route('slot', $slot->id)}}">
                       <div class="game" style="background-image: url('{{ asset("assets/slots/" . $slot->name . ".png") }}');">
                       <button type="submit" class="play-btn">Play</button>
                         </div>
