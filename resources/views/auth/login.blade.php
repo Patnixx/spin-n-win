@@ -8,18 +8,14 @@
       <!-- NOTE - Username -->
       <div class="input-container">
         <input class="input-placeholder" type="username" id="username" name="username" placeholder="Username" class="@error('username') is-invalid @enderror" value="{{@old('username')}}">
-
-        @if ($errors->has('username'))
-          <span class="text-danger" role="alert">{{$errors->first('username')}}</span>
-        @endif
       </div>
 
       <!-- NOTE - Password -->
       <div class="input-container">
         <input  class="input-placeholder" type="password" id="password" name="password" placeholder="Password" class="@error('password') is-invalid @enderror" value="{{@old('password')}}" minlength="6">
-        @if ($errors->has('username'))
-          <span class="text-danger" role="alert">{{$errors->first('username')}}</span>
-        @endif
+        @error('password')
+          <span class="text-danger" role="alert">{{$message}}</span>
+        @enderror
       </div>
         <button class="login-btn" type="submit">Log In</button>
         <div class="sub-btns" >

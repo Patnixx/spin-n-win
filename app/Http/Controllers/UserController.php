@@ -17,16 +17,34 @@ class UserController extends Controller
 
     public function updateProfile(Request $request){
         $id = Auth::id();
+        $password = Auth::user()->password;
         $request->validate([
             'n_pass' => 'nullable|string|min:6',
             'nc_pass' => 'nullable|same:n_pass',
             'o_user' => 'nullable|string',
             'n_user' => 'nullable|string|unique:users,username',
         ]);
-        User::where('id', $id)->update([
-            'password' => Hash::make($request->nc_pass),
-            'username' => $request->n_user,
-        ]);
+
+        if($request->n_user){
+            $request->validate([
+                'n_user' => 'string|unique:users,username',
+            ]);
+
+            User::where('id', $id)->update([
+                'username' => $request->n_user,
+            ]);
+        }
+
+        if($request->nc_pass){
+            $request->validate([
+                'nc_pass' => 'nullable|same:n_pass',
+            ]);
+
+            User::where('id', $id)->update([
+                'password' => Hash::make($request->nc_pass),
+            ]);
+        }
+        
         
         /*$data = [
             'f_name' => $request->f_name,
