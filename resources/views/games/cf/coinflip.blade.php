@@ -8,20 +8,24 @@
      <div class="coin" id="coin">
       <img src="{{asset('assets/img/tails.png')}}" alt="Tails" />
      </div>
-     <div class="choices">
-      <label for="heads"><input type="radio" name="choice" id="choice" value="Heads">Heads</label>
-      <label for="tails"><input type="radio" name="choice" id="choice" value="Tails">Tails</label>
-     </div>
+     <div>
+      <label>
+          <input type="radio" name="choice" value="heads"> Heads
+      </label>
+      <label>
+          <input type="radio" name="choice" value="tails"> Tails
+      </label>
+  </div>
      <button id="tossButton">Toss Coin</button>
      <div class="tkn">
-      <p>Balance: <span id="balance">100 000.00</span></p>
+      <p>Balance: <span id="balance">100000.00</span></p>
       <input type="number" name="betAmount" id="betAmount" placeholder="Enter a value" min="1" max="">
       </div>
      
    </div>
    <p class="message"></p>
    <script>
-      const coinIcon = document.getElementById('coin');
+      /*const coinIcon = document.getElementById('coin');
       const tossBtn = document.getElementById('tossButton');
       const result = document.querySelector('.message');
       const win = bet*2;
@@ -61,12 +65,6 @@
                   `<img src="${imageUrl}" alt="${faceCoin}">`;
             coinIcon.classList.remove('flip');
             setTimeout(() => {
-               if(choice == faceCoin)
-               {
-                  tokens += (bet*2);
-
-                  
-               }
                   result.textContent = `Result: ${faceCoin}`;
                   result.style.opacity = 1;
                   tossBtn.classList.remove('disabled');
@@ -74,15 +72,24 @@
                   
             }, 500);
          }, 1000);
-      }
+      }*/
       document.addEventListener("DOMContentLoaded", () => {
     const balanceSpan = document.getElementById("balance");
     const betAmountInput = document.getElementById("betAmount");
-    const playButton = document.getElementById("playButton");
+    const playButton = document.getElementById("tossButton");
+    const choiceInputs = document.getElementsByName("choice");
+    const coinIcon = document.getElementById("coin"); // The coin image element
+    const resultMessage = document.querySelector(".message"); // Result display element
 
     playButton.addEventListener("click", () => {
-        /*const currentBalance = parseFloat(balanceSpan.textContent.replace(/,/g, ""));
+        const currentBalance = parseFloat(balanceSpan.textContent.replace(/,/g, ""));
         const betAmount = parseFloat(betAmountInput.value);
+        const selectedChoice = Array.from(choiceInputs).find(input => input.checked)?.value;
+
+        if (!selectedChoice) {
+            alert("Please select Heads or Tails.");
+            return;
+        }
 
         if (isNaN(betAmount) || betAmount <= 0) {
             alert("Please enter a valid bet amount.");
@@ -96,21 +103,37 @@
 
         // Deduct bet amount
         const newBalance = currentBalance - betAmount;
-        balanceSpan.textContent = newBalance.toFixed(2);*/
+        balanceSpan.textContent = newBalance.toFixed(2);
 
-        const isWin = Math.random() < 0.5;
+        // Simulate a coin flip result (Heads = 0, Tails = 1)
+        const flipResult = Math.random() < 0.5 ? "heads" : "tails";
 
+        // Coin animation
+        coinIcon.classList.add("flip"); // Add a class to trigger CSS animation
         setTimeout(() => {
-            if (isWin) {
-                const winnings = betAmount * 2;
-                balanceSpan.textContent = (newBalance + winnings).toFixed(2);
-                alert(`You won! Your bet amount has doubled to ${winnings.toFixed(2)}`);
-            } else {
-                alert(`You lost! ${betAmount.toFixed(2)} has been deducted from your balance.`);
-            }
-        }, 500); // Simulate a short delay for the game result
+            // Update coin image and stop animation
+            const imageUrl = flipResult === "heads" 
+                ? '{{ asset("assets/img/heads.png") }}' 
+                : '{{ asset("assets/img/tails.png") }}';
+
+            coinIcon.innerHTML = `<img src="${imageUrl}" alt="${flipResult}" />`;
+            coinIcon.classList.remove("flip");
+
+            // Display the result
+            setTimeout(() => {
+                if (flipResult === selectedChoice) {
+                    const winnings = betAmount * 2;
+                    balanceSpan.textContent = (newBalance + winnings).toFixed(2);
+                    resultMessage.textContent = `You won! The coin landed on ${flipResult}. Your bet amount has doubled to ${winnings.toFixed(2)}.`;
+                } else {
+                    resultMessage.textContent = `You lost! The coin landed on ${flipResult}. ${betAmount.toFixed(2)} has been deducted from your balance.`;
+                }
+                resultMessage.style.opacity = 1; // Make the result visible
+            }, 500);
+        }, 1000); // Coin animation duration
     });
 });
+
    </script>
 </body>
 @endsection
