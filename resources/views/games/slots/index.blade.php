@@ -10,7 +10,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="">SLOTS</a></li>
+                    <li><a href="{{route('home')}}">SLOTS</a></li>
                     <li><a href="{{route('coinflip')}}">COINFLIP</a></li>
                 </ul>
             </div> 
@@ -20,7 +20,14 @@
               @foreach ($slots as $index => $slot)
               <div class="last-win" style="background-image: url('{{ asset("assets/slots/" . $slot->name . ".png") }}');">
                 <div class="gradient">
-                  <h1>{{$slot->name}}</h1>
+                  <?php
+                    // Generate a random float between a minimum and maximum value with 2 decimal places
+                    $min = 0.20; // Minimum value
+                    $max = 6969.00; // Maximum value
+
+                    $randomFloat = mt_rand($min * 100, $max * 100) / 100;
+                  ?>
+                  <h1><?php echo number_format($randomFloat, 2);?></h1>
                   <h2>{{$users[$index]->username}}</h2>
                 </div>
               </div>
