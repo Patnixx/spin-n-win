@@ -21,13 +21,13 @@
                   <div class="last-win" style="background-image: url('{{ asset("assets/slots/" . $slot->name . ".png") }}');">
                     <div class="gradient">
                       <?php
-                    // Generate a random float between a minimum and maximum value with 2 decimal places
-                    $min = 0.20; // Minimum value
-                    $max = 6969.00; // Maximum value
+
+                    $min = 0.20; 
+                    $max = 6969.00;
 
                     $randomFloat = mt_rand($min * 100, $max * 100) / 100;
                   ?>
-                  <h1><?php echo number_format($randomFloat, 2);?></h1>
+                  <h1><?php echo number_format($randomFloat, 2);?>€</h1>
                       <h2>{{$users[$index]->username}}</h2>
                     </div>
                   </div>

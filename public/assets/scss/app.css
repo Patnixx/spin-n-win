@@ -389,7 +389,7 @@
 }
 .main_hp .slots nav .last-win .gradient h1 {
   padding: 10px 0 0 10px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: white;
 }
@@ -754,7 +754,7 @@ h2 {
 }
 .main_sp .slots nav .last-win .gradient h1 {
   padding: 10px 0 0 10px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: white;
 }
@@ -790,7 +790,7 @@ h2 {
 .main_sp .slots .iframe-container {
   position: relative;
   width: 80%;
-  max-width: 800px;
+  max-width: 1000px;
   aspect-ratio: 16/9;
   margin: auto;
 }
