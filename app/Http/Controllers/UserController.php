@@ -20,9 +20,12 @@ class UserController extends Controller
         $request->validate([
             'n_pass' => 'nullable|string|min:6',
             'nc_pass' => 'nullable|same:n_pass',
+            'o_user' => 'nullable|string',
+            'n_user' => 'nullable|string|unique:users,username',
         ]);
         User::where('id', $id)->update([
-            'password' => Hash::make($request->nc_pass)
+            'password' => Hash::make($request->nc_pass),
+            'username' => $request->n_user,
         ]);
         
         /*$data = [
@@ -32,25 +35,8 @@ class UserController extends Controller
             'username' => $request->username,
         ];*/
 
-            session()->flash('success', 'Password updated successfully!');
 
-            return redirect()->route('profile');
-    }
-
-    public function addBalance(Request $request){
-        $id = Auth::id();
-        $request->validate([
-            'amount' => 'nullable|integer',
-        ]);
-
-        $tkn = Auth::user()->token_amount;
-        $tkn += $request->amount;
-
-        User::where('id', $id)->update([
-            'token_amount' => $tkn
-        ]);
-
-        session()->flash('success', 'Tokens bought successfully!');
+        session()->flash('success', 'Changes made successfully!');
 
         return redirect()->route('profile');
     }

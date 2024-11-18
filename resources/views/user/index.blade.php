@@ -5,16 +5,6 @@
       <h1 class="profile-title">Profile of <span>{{$user->username}}</span></h1>
       <h2>Change password</h2>
       <form action="{{route('profile.updatepass')}}" method="POST">
-        @if(session('success'))
-          <div class="alert alert-success">
-              {{ session('success') }}
-          </div>
-        @endif
-        @if(session('error'))
-          <div class="alert alert-error">
-              {{ session('error') }}
-          </div>
-        @endif
         @csrf
         <!-- NOTE - New Pass --> 
         <div class="input-container">
@@ -30,46 +20,48 @@
           @error('n_pass')
             <div class="error">{{$message}}</div>
           @enderror
+          @if(session('success'))
+            <span class="alert alert-success">
+                {{ session('success') }}
+            </span>
+          @endif
+          @if(session('error'))
+            <div class="alert alert-error">
+                {{ session('error') }}
+            </div>
+          @endif
       </form>
     </div>
 
-
-
   <div class="column right">
-      <h2>Add balance</h2>
-      <form action="{{route('profile.get.tkn')}}" method="POST">
+    <h2>Change username</h2>
+    <form action="{{route('profile.updatepass')}}" method="POST">
+      @csrf
+      <!-- NOTE - New Pass --> 
+      <div class="input-container">
+        <input class="input-placeholder @error('o_user') is-invalid @enderror" type="text" id="o_user" name="o_user" placeholder="{{$user->username}}" value="">
+      </div>
+      <div class="input-container">
+        <input class="input-placeholder @error('n_user') is-invalid @enderror" type="text" id="n_user" name="n_user" placeholder="New username" value="">
+      </div>
+        <button class="register-btn" type="submit">Change username</button>
+        @error('o_user')
+          <div class="error">{{$message}}</div>
+        @enderror
+        @error('n_user')
+          <div class="error">{{$message}}</div>
+        @enderror
         @if(session('success'))
           <div class="alert alert-success">
-              {{ session('success') }}
+              {{ session('success-u') }}
           </div>
         @endif
         @if(session('error'))
           <div class="alert alert-error">
               {{ session('error') }}
           </div>
-        @endif
-        @csrf
-        <div class="input-container">
-          <input class="input-placeholder" type="text" id="amount" name="amount" placeholder="{{$user->token_amount}}" class="" value="">
-        </div>
-        <button class="register-btn" type="submit">Buy</button>
-        @error('amount')
-          <div class="error">{{$message}}</div>
-        @enderror
-      </form>
-      
-      <h2>Withdraw balance</h2>
-      <form action="{{route('profile.lost.tkn')}}" method="POST">
-        <input type="hidden" name="_token" value="RlZ9ROPgBMxFGXd9hsp8aBv3TsXuA5G8HLwDg0h4" autocomplete="off">      <!-- NOTE - First Name --> 
-        <div class="input-container">
-          <input class="input-placeholder" type="text" id="amount" name="amount" placeholder="Amount" class="" value="">
-                </div>
-                <input type="hidden" name="_token" value="RlZ9ROPgBMxFGXd9hsp8aBv3TsXuA5G8HLwDg0h4" autocomplete="off">      <!-- NOTE - First Name --> 
-        <div class="input-container">
-          <input class="input-placeholder" type="text" id="acc" name="acc" placeholder="Card" class="" value="">
-                </div>
-      <button class="register-btn" type="submit">Withdraw</button>
-      </form>
+      @endif
+    </form>
     </div>
   </body>
 @endsection
